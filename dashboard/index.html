@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Douce France CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span>Douce France CMS</span>
+        <strong>サイト編集</strong>
+      </div>
+      <nav id="groupNav" class="group-nav"></nav>
+      <div class="sidebar-footer">
+        <a href="/" target="_blank" rel="noopener">公開ページを開く</a>
+        <button id="logoutButton" type="button">ログアウト</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h1>Douce France 管理ダッシュボード</h1>
+          <p id="updatedAt" class="updated-at">読み込み中...</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="reloadButton" class="button button-secondary" type="button">再読み込み</button>
+          <button id="saveButton" class="button button-primary" type="button">保存して公開反映</button>
+        </div>
+      </header>
+
+      <section id="loginPanel" class="login-panel" hidden>
+        <div class="login-card">
+          <h2>管理者ログイン</h2>
+          <p>編集内容は保存後すぐ公開ページに反映されます。</p>
+          <label>
+            管理パスワード
+            <input id="passwordInput" type="password" autocomplete="current-password">
+          </label>
+          <button id="loginButton" class="button button-primary" type="button">ログイン</button>
+        </div>
+      </section>
+
+      <section id="editorPanel" class="editor-layout" hidden>
+        <div class="editor-column">
+          <div id="status" class="status"></div>
+          <div class="page-tools">
+            <label>
+              編集するページ
+              <select id="pageSelect" aria-label="編集するページ"></select>
+            </label>
+            <p id="pageSummary"></p>
+          </div>
+          <form id="editorForm" class="editor-form"></form>
+        </div>
+        <aside class="preview-column">
+          <div class="preview-card">
+            <div class="preview-head">
+              <strong>ライブ確認</strong>
+              <button id="refreshPreviewButton" type="button">更新</button>
+            </div>
+            <iframe id="previewFrame" src="/" title="公開ページプレビュー"></iframe>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
