@@ -43,4 +43,4 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
-Sitemap: https://dfr.tokyo/sitemap.xml
+Sitemap: https://demo-dfr-tokyo-douce-france-c86b05-tenma-komines-projects.vercel.app/sitemap.xml

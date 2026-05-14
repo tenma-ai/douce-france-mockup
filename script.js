@@ -285,7 +285,7 @@ document.querySelectorAll('.calendar-day.has-event').forEach(cell => {
     if (!link) return;
     cell.style.cursor = 'pointer';
     cell.addEventListener('click', e => {
-        if (e.target.closest('a')) return; // リンク自体のクリックはそのまま
+        if (e.target.closest('a')) return;
         window.location.href = link.href;
     });
 });
@@ -325,13 +325,10 @@ const lessonSchedules = {
 function openBookingModal(lessonType, lessonName) {
     const overlay = document.getElementById('bookingOverlay');
     if (!overlay) return;
-
     const lesson = lessonSchedules[lessonType] || { name: lessonName || 'レッスン', dates: ['日程はお問い合わせください'] };
-
     document.getElementById('bookingModalTitle').textContent = lesson.name + ' 体験申し込み';
     document.getElementById('bookingLessonType').value = lessonType;
     document.getElementById('bookingLessonName').value = lesson.name;
-
     const dateSelect = document.getElementById('bookingDateSelect');
     dateSelect.innerHTML = '';
     lesson.dates.forEach(date => {
@@ -346,13 +343,11 @@ function openBookingModal(lessonType, lessonName) {
         });
         dateSelect.appendChild(btn);
     });
-
     document.getElementById('bookingSelectedDate').value = '';
     const form = document.getElementById('bookingForm');
     if (form) { form.style.display = ''; form.reset(); }
     const successMsg = document.getElementById('bookingSuccessMsg');
     if (successMsg) successMsg.classList.remove('active');
-
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -363,14 +358,12 @@ function closeBookingModal() {
     document.body.style.overflow = '';
 }
 
-// 予約トリガーボタン
 document.querySelectorAll('[data-booking-lesson]').forEach(btn => {
     btn.addEventListener('click', () => {
         openBookingModal(btn.dataset.bookingLesson, btn.dataset.bookingName || '');
     });
 });
 
-// モーダル閉じる
 const bookingOverlayEl = document.getElementById('bookingOverlay');
 if (bookingOverlayEl) {
     bookingOverlayEl.addEventListener('click', e => {
@@ -384,16 +377,10 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeBookingModal();
 });
 
-// 予約フォーム送信
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
     bookingForm.addEventListener('submit', async e => {
         e.preventDefault();
-        const selectedDate = document.getElementById('bookingSelectedDate').value;
-        if (!selectedDate) {
-            alert('ご希望の日程を選択してください。');
-            return;
-        }
         const submitBtn = bookingForm.querySelector('.booking-submit-btn');
         const originalText = submitBtn.textContent;
         submitBtn.disabled = true;

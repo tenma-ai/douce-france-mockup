@@ -1,26 +1,22 @@
 :root {
-    /* Colors - warm classic French palette */
-    --color-primary: #1c3d6c;
-    --color-primary-light: #2e5a90;
-    --color-primary-dark: #112540;
-    --color-accent: #be3e3e;
-    --color-accent-light: #edcabc;
-    --color-accent-dark: #9a2e2e;
-    --color-text: #2e261a;
-    --color-text-light: #6d6050;
-    --color-background: #fef8ec;
-    --color-background-alt: #f5ecd5;
+    /* Colors - フランスの洗練と温かみを表現 */
+    --color-primary: #1a3a52;
+    --color-primary-light: #2d5472;
+    --color-primary-dark: #0f2537;
+    --color-accent: #c9a961;
+    --color-accent-light: #ddc899;
+    --color-accent-dark: #a68941;
+    --color-text: #2c2c2c;
+    --color-text-light: #666666;
+    --color-background: #fdfcfa;
+    --color-background-alt: #f8f6f2;
     --color-white: #ffffff;
-    --color-border: #e6d5b4;
-    --color-paper: #fef6e0;
-    --color-ink-soft: #4a3e2e;
+    --color-border: #e8e5df;
 
     /* Typography */
     --font-serif: 'Crimson Pro', 'Noto Serif JP', serif;
-    --font-sans: 'Kiwi Maru', 'Noto Sans JP', sans-serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
     --font-french: 'Playfair Display', serif;
-    --font-hand: 'Zen Kurenaido', 'Kiwi Maru', serif;
-    --font-hand-latin: 'Caveat', cursive;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -30,9 +26,8 @@
     --spacing-xl: 6rem;
 
     /* Layout */
-    --container-width: 1280px;
-    --header-height: 118px;
-    --border-radius: 12px;
+    --container-width: 1200px;
+    --border-radius: 8px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -49,11 +44,9 @@ html {
 body {
     font-family: var(--font-sans);
     font-size: 18px;
-    line-height: 1.85;
+    line-height: 1.8;
     color: var(--color-text);
-    background:
-        linear-gradient(90deg, rgba(232, 218, 200, 0.16) 1px, transparent 1px) 0 0 / 32px 32px,
-        var(--color-background);
+    background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -64,7 +57,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 253, 248, 0.96);
+    background-color: var(--color-white);
     border-bottom: 1px solid var(--color-border);
     z-index: 1000;
     transition: var(--transition);
@@ -98,7 +91,6 @@ body {
     color: var(--color-primary);
     letter-spacing: 0.05em;
     font-style: italic;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .logo-sub {
@@ -109,7 +101,7 @@ body {
 
 .header-nav {
     display: flex;
-    gap: 1.45rem;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -158,7 +150,7 @@ body {
 }
 
 .mobile-menu-toggle {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -177,12 +169,13 @@ body {
 /* Hero */
 .hero {
     position: relative;
-    min-height: calc(100svh - var(--header-height));
-    margin-top: var(--header-height);
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding-top: 84px;
     box-sizing: border-box;
 }
 
@@ -198,8 +191,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 50%;
-    filter: saturate(0.95) contrast(0.96) brightness(1.04);
 }
 
 .hero-overlay {
@@ -208,9 +199,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background:
-        linear-gradient(135deg, rgba(35, 30, 24, 0.5) 0%, rgba(35, 30, 24, 0.2) 58%, rgba(255, 246, 226, 0.08) 100%),
-        linear-gradient(180deg, rgba(30, 24, 18, 0.12) 0%, rgba(30, 24, 18, 0.38) 100%);
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(26, 58, 82, 0.4) 100%);
 }
 
 .hero-content {
@@ -221,29 +210,22 @@ body {
     max-width: 800px;
     padding: 2rem;
     animation: fadeInUp 1s ease-out;
-    text-shadow: 0 2px 16px rgba(20, 16, 12, 0.42);
 }
 
 .hero-subtitle {
-    display: inline-block;
     font-size: 0.95rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.15em;
     margin-bottom: 1rem;
     opacity: 0.9;
-    font-family: var(--font-hand);
-    padding: 0.15rem 0.9rem 0.25rem;
-    border: 1px solid rgba(255, 255, 255, 0.52);
-    border-radius: 999px;
-    background: rgba(255, 250, 240, 0.14);
 }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: 3.35rem;
+    font-size: 3.5rem;
     font-weight: 400;
     line-height: 1.3;
     margin-bottom: 1.5rem;
-    letter-spacing: 0;
+    letter-spacing: 0.02em;
 }
 
 .hero-description {
@@ -251,7 +233,6 @@ body {
     line-height: 1.8;
     margin-bottom: 2.5rem;
     opacity: 0.95;
-    color: rgba(255, 252, 244, 0.98);
 }
 
 .hero-cta {
@@ -270,45 +251,31 @@ body {
     font-size: 1rem;
     transition: var(--transition);
     border: 2px solid transparent;
-    box-shadow: 0 6px 18px rgba(34, 24, 16, 0.16);
 }
 
 .hero-button.primary {
     background-color: var(--color-accent);
     color: var(--color-white);
-    box-shadow: 0 5px 16px rgba(168, 53, 51, 0.28);
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
 }
 
 .hero-button.primary:hover {
     background-color: var(--color-accent-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(168, 53, 51, 0.34);
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4);
 }
 
 .hero-button.secondary {
-    background-color: rgba(255, 250, 240, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--color-white);
-    border-color: rgba(255, 255, 255, 0.48);
-    backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .hero-button.secondary:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);
-}
-
-/* 明るい背景上のsecondaryボタン（curated-actionsなど） */
-.curated-actions .hero-button.secondary {
-    background-color: transparent;
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-    backdrop-filter: none;
-}
-.curated-actions .hero-button.secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-color: var(--color-primary);
 }
 
 /* Sections */
@@ -329,10 +296,10 @@ section {
 }
 
 .title-label {
-    font-family: var(--font-hand);
-    font-size: 1rem;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
     color: var(--color-accent);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
@@ -342,7 +309,6 @@ section {
     font-weight: 600;
     color: var(--color-primary);
     line-height: 1.3;
-    letter-spacing: 0;
 }
 
 .section-intro {
@@ -355,7 +321,7 @@ section {
 
 /* Welcome Section */
 .welcome {
-    background-color: rgba(255, 255, 255, 0.72);
+    background-color: var(--color-white);
 }
 
 .welcome-container {
@@ -370,7 +336,6 @@ section {
 .welcome-body {
     margin-bottom: var(--spacing-md);
     line-height: 2;
-    color: var(--color-ink-soft);
 }
 
 .welcome-body p {
@@ -387,31 +352,23 @@ section {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    padding: 0.85rem 0.75rem;
-    border-radius: var(--border-radius);
-    background: rgba(255, 250, 240, 0.52);
 }
 
 .feature-icon {
     width: 48px;
     height: 48px;
     flex-shrink: 0;
-    background-color: var(--color-paper);
+    background-color: var(--color-background-alt);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-accent);
-    border: 1px solid var(--color-border);
-    box-shadow: 2px 3px 0 rgba(200, 70, 66, 0.12);
-    transform: rotate(-2deg);
 }
 
 .feature-icon svg {
     width: 24px;
     height: 24px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
 }
 
 .feature-content h3 {
@@ -433,9 +390,8 @@ section {
 .image-card {
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 18px 44px rgba(63, 45, 28, 0.12);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
     position: relative;
-    border: 8px solid var(--color-white);
 }
 
 .image-card::before {
@@ -447,7 +403,7 @@ section {
     height: 200px;
     background-color: var(--color-accent-light);
     opacity: 0.2;
-    border-radius: 52% 48% 46% 54%;
+    border-radius: 50%;
     z-index: -1;
 }
 
@@ -475,12 +431,11 @@ section {
 }
 
 .lesson-card {
-    background-color: var(--color-paper);
+    background-color: var(--color-white);
     padding: 2.5rem 2rem;
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
     transition: var(--transition);
-    box-shadow: 0 8px 24px rgba(88, 62, 35, 0.06);
 }
 
 .lesson-card-expanded {
@@ -489,31 +444,26 @@ section {
 }
 
 .lesson-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(88, 62, 35, 0.11);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
     border-color: var(--color-accent-light);
 }
 
 .lesson-icon {
     width: 60px;
     height: 60px;
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-white);
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.42);
-    box-shadow: 3px 4px 0 rgba(23, 63, 122, 0.18);
-    transform: rotate(-1.5deg);
 }
 
 .lesson-icon svg {
     width: 28px;
     height: 28px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
 }
 
 .lesson-title {
@@ -578,7 +528,7 @@ section {
 .lessons-note {
     text-align: center;
     padding: 2rem;
-    background-color: var(--color-paper);
+    background-color: var(--color-white);
     border-radius: var(--border-radius);
     border: 2px dashed var(--color-accent-light);
 }
@@ -588,35 +538,11 @@ section {
     font-weight: 500;
 }
 
-.lesson-pricing {
-    margin-top: 2rem;
-    padding: 2.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    background-color: var(--color-white);
-}
-
-.lesson-pricing-title {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 0.75rem;
-}
-
-.lesson-pricing-lead {
-    max-width: 720px;
-    margin: 0 auto 2rem;
-    color: var(--color-text-light);
-    text-align: center;
-    line-height: 1.9;
-}
-
 /* Schedule Section */
 .schedule {
     background:
         linear-gradient(180deg, rgba(253, 252, 250, 0.95) 0%, rgba(248, 246, 242, 1) 100%),
-        repeating-linear-gradient(90deg, rgba(237, 41, 57, 0.05) 0 1px, transparent 1px 92px);
+        repeating-linear-gradient(90deg, rgba(201, 169, 97, 0.06) 0 1px, transparent 1px 92px);
 }
 
 .schedule-container {
@@ -729,7 +655,7 @@ section {
 
 .day-name {
     color: var(--color-text-light);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     text-align: center;
     letter-spacing: 0.08em;
     padding-bottom: 0.35rem;
@@ -751,7 +677,7 @@ section {
 
 .calendar-day.has-event {
     background-color: var(--color-white);
-    border-color: rgba(237, 41, 57, 0.45);
+    border-color: rgba(201, 169, 97, 0.55);
     box-shadow: inset 0 3px 0 var(--color-accent), 0 8px 20px rgba(26, 58, 82, 0.06);
 }
 
@@ -759,21 +685,21 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.55rem;
-    height: 1.55rem;
+    width: 1.75rem;
+    height: 1.75rem;
     margin-bottom: 0.35rem;
     border-radius: 50%;
     background-color: rgba(26, 58, 82, 0.08);
     color: var(--color-primary);
     font-family: var(--font-french);
-    font-size: 0.92rem;
+    font-size: 1.05rem;
     font-weight: 600;
 }
 
 .calendar-day p {
     margin: 0 0 0.45rem;
     color: var(--color-text);
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     line-height: 1.55;
 }
 
@@ -844,8 +770,7 @@ section {
 
 /* Testimonials Section */
 .testimonials {
-    background:
-        linear-gradient(180deg, rgba(16, 42, 85, 0.96), rgba(23, 63, 122, 0.96));
+    background-color: var(--color-primary);
     color: var(--color-white);
 }
 
@@ -872,14 +797,14 @@ section {
 .testimonial-card {
     position: relative;
     padding: 2.5rem;
-    background-color: rgba(255, 250, 240, 0.08);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius);
-    border: 1px solid rgba(255, 250, 240, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .testimonial-quote {
     margin-bottom: 1.5rem;
-    color: var(--color-white);
+    color: var(--color-accent);
 }
 
 .testimonial-quote svg {
@@ -1089,15 +1014,6 @@ section {
     color: var(--color-accent);
 }
 
-.muted-phone {
-    font-size: 1rem;
-    margin-top: 0.35rem;
-}
-
-.muted-phone a {
-    color: var(--color-text-light);
-}
-
 .contact-hours-text {
     font-size: 1rem;
     color: var(--color-text-light);
@@ -1109,31 +1025,26 @@ section {
     gap: 2rem;
     align-items: flex-start;
     padding: 2.5rem;
-    background-color: var(--color-paper);
+    background-color: var(--color-background-alt);
     border-radius: var(--border-radius);
     border: 1px solid var(--color-border);
-    box-shadow: 0 10px 26px rgba(88, 62, 35, 0.08);
 }
 
 .contact-icon {
     width: 56px;
     height: 56px;
     flex-shrink: 0;
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-white);
-    box-shadow: 3px 4px 0 rgba(23, 63, 122, 0.18);
-    transform: rotate(-2deg);
 }
 
 .contact-icon svg {
     width: 28px;
     height: 28px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
 }
 
 .contact-card h3 {
@@ -1258,7 +1169,7 @@ section {
 .form-textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(237, 41, 57, 0.1);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
 }
 
 .form-textarea {
@@ -1307,12 +1218,12 @@ section {
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(237, 41, 57, 0.28);
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
 }
 
 .submit-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(237, 41, 57, 0.36);
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4);
 }
 
 .submit-button:active {
@@ -1553,42 +1464,16 @@ section {
 
 .social-text-links {
     display: flex;
-    gap: 0.65rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
 }
 
-.social-icon-link {
-    width: 42px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.social-text-links a {
     color: var(--color-white);
     text-decoration: none;
-    border: none;
-    border-radius: 50%;
-    background: transparent;
-    transition: var(--transition);
-}
-
-.social-icon-link img {
-    display: block;
-    width: 34px;
-    height: 34px;
-    object-fit: contain;
-}
-
-.social-icon-link.line img {
-    width: 38px;
-    height: 38px;
-}
-
-.social-icon-link:hover {
-    transform: translateY(-2px);
-}
-
-.footer-blog-link {
-    margin-top: 1rem;
+    border: 1px solid rgba(255,255,255,0.24);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
 }
 
 .schedule-card-board {
@@ -1871,7 +1756,7 @@ section {
     display: inline-flex;
     align-items: center;
     min-height: 2.4rem;
-    border: 1px solid rgba(237, 41, 57, 0.28);
+    border: 1px solid rgba(201, 169, 97, 0.34);
     border-radius: 999px;
     padding: 0.45rem 0.85rem;
     background: rgba(247, 242, 234, 0.78);
@@ -1934,7 +1819,7 @@ section {
 
 .blog-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(237, 41, 57, 0.42);
+    border-color: rgba(201, 169, 97, 0.48);
 }
 
 .blog-card time,
@@ -2005,102 +1890,6 @@ section {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Learning hub */
-.learning {
-    background: var(--color-white);
-}
-
-.learning-container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-}
-
-.learning-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-}
-
-.learning-card {
-    display: block;
-    min-height: 220px;
-    padding: 2rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    background: linear-gradient(180deg, var(--color-paper) 0%, var(--color-white) 100%);
-    text-decoration: none;
-    color: var(--color-text);
-    transition: var(--transition);
-}
-
-.learning-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-accent-light);
-    box-shadow: 0 14px 32px rgba(88, 62, 35, 0.1);
-}
-
-.learning-label,
-.instagram-label {
-    display: inline-block;
-    margin-bottom: 0.7rem;
-    font-family: var(--font-hand);
-    color: var(--color-accent-dark);
-    font-size: 0.95rem;
-    font-style: normal;
-}
-
-.learning-card h3 {
-    margin-bottom: 0.75rem;
-    color: var(--color-primary);
-    font-family: var(--font-serif);
-    font-size: 1.45rem;
-    line-height: 1.35;
-}
-
-.learning-card p {
-    color: var(--color-text-light);
-    line-height: 1.85;
-}
-
-.instagram-strip {
-    margin-top: 1.5rem;
-    padding: 1.5rem 1.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    background: var(--color-paper);
-    box-shadow: 0 8px 20px rgba(88, 62, 35, 0.06);
-}
-
-.instagram-strip p {
-    margin: 0;
-    color: var(--color-text-light);
-}
-
-.instagram-strip a {
-    width: 52px;
-    height: 52px;
-    flex-shrink: 0;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--border-radius);
-    background: transparent;
-    color: inherit;
-    text-decoration: none;
-}
-
-.instagram-strip a img {
-    display: block;
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
-}
-
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -2164,6 +1953,7 @@ section {
     overflow: hidden;
 }
 
+.lesson-card::before,
 .testimonial-card::before {
     content: '';
     position: absolute;
@@ -2171,10 +1961,11 @@ section {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(237, 41, 57, 0.09), transparent);
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 97, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
+.lesson-card:hover::before,
 .testimonial-card:hover::before {
     left: 100%;
 }
@@ -2222,17 +2013,9 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .learning-grid {
-        grid-template-columns: 1fr;
-    }
-
 }
 
 @media (max-width: 768px) {
-    :root {
-        --header-height: 95px;
-    }
-
     .header-nav {
         display: none;
     }
@@ -2299,13 +2082,9 @@ section {
 
     .hero {
         height: auto;
-        min-height: calc(100svh - var(--header-height));
-        padding: 0 1.5rem 44px;
+        min-height: 100svh;
+        padding: 92px 1.5rem 52px;
         overflow: hidden;
-    }
-
-    .hero-image img {
-        object-position: center 50%;
     }
 
     .hero-content {
@@ -2371,20 +2150,6 @@ section {
         padding: 2rem 1.5rem;
     }
 
-    .lesson-pricing {
-        padding: 1.5rem;
-    }
-
-    .learning-card {
-        min-height: 0;
-        padding: 1.6rem;
-    }
-
-    .instagram-strip {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
     .month-calendar {
         padding: 1.25rem;
     }
@@ -2419,8 +2184,8 @@ section {
     }
 
     .hero {
-        min-height: calc(100svh - var(--header-height));
-        padding: 0 1rem 36px;
+        min-height: 100svh;
+        padding: 84px 1rem 40px;
     }
 
     .hero-content {
@@ -2434,7 +2199,7 @@ section {
     }
 
     .hero-title {
-        font-size: clamp(1.7rem, 7.2vw, 1.9rem);
+        font-size: clamp(1.85rem, 9vw, 2.15rem);
         margin-bottom: 1rem;
     }
 
@@ -2442,6 +2207,10 @@ section {
         font-size: 0.9rem;
         line-height: 1.75;
         margin-bottom: 1.35rem;
+    }
+
+    .hero-description br {
+        display: none;
     }
 
     .hero-button {
@@ -2640,8 +2409,8 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(237, 41, 57, 0.1);
-    border: 1px solid rgba(237, 41, 57, 0.26);
+    background: rgba(201, 169, 97, 0.12);
+    border: 1px solid rgba(201, 169, 97, 0.3);
     border-radius: 999px;
     padding: 0.4rem 1rem;
     font-size: 0.82rem;
@@ -2655,7 +2424,7 @@ section {
     margin-bottom: var(--spacing-md);
 }
 .pricing-card {
-    background: var(--color-paper);
+    background: var(--color-background-alt);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     padding: 1.75rem 1.5rem;
@@ -2663,13 +2432,13 @@ section {
     position: relative;
 }
 .pricing-card.featured {
-    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+    background: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-white);
 }
 .pricing-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(88,62,35,0.1);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
     border-color: var(--color-accent-light);
 }
 .pricing-card.featured:hover {
@@ -2680,7 +2449,7 @@ section {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent);
-    font-family: var(--font-hand);
+    font-family: var(--font-serif);
     margin-bottom: 0.5rem;
 }
 .pricing-card.featured .pricing-card-label { color: rgba(255,255,255,0.65); }
@@ -2933,218 +2702,126 @@ section {
     .lesson-price-row { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
 }
 
-/* ===== 温かみ・手書き風・親しみやすさ デザイン強化 ===== */
-
-/* セクションラベル — 手書き風Caveatフォント */
-.title-label {
-    font-family: var(--font-hand-latin), var(--font-hand), cursive;
-    font-size: 1.15rem;
-    font-style: italic;
-    letter-spacing: 0.06em;
+/* ===== カレンダー カテゴリ色 ===== */
+.has-event.cat-kaiwa {
+    background-color: rgba(201, 124, 42, 0.12);
+    border-color: rgba(201, 124, 42, 0.5);
+    border-left: 4px solid #c97c2a;
+    box-shadow: none;
 }
-.title-label::before { content: '— '; opacity: 0.55; }
-.title-label::after  { content: ' —'; opacity: 0.55; }
-
-/* 中央セクションタイトルに手書き風アンダーライン */
-.section-title.center .title-main {
-    display: inline-block;
-    position: relative;
-    padding-bottom: 20px;
-}
-.section-title.center .title-main::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 72px;
-    height: 3px;
-    background: linear-gradient(to right, transparent, var(--color-accent) 25%, var(--color-accent) 75%, transparent);
-    border-radius: 999px;
-    opacity: 0.75;
-}
-
-/* ヒーローサブタイトル — 手書きノート風 */
-.hero-subtitle {
-    font-family: var(--font-hand);
-    font-size: 1.0rem;
-    letter-spacing: 0.14em;
-    background: rgba(255, 248, 224, 0.18);
-    border-color: rgba(255, 244, 200, 0.65);
-    border-width: 1.5px;
-}
-
-/* CTAボタンを丸みのある親しみやすい形に */
-.nav-cta {
-    border-radius: 999px;
-    padding: 0.6rem 1.8rem;
-}
-.hero-button {
-    border-radius: 999px;
-}
-.submit-button,
-.contact-link,
-.mnav-cta-btn {
-    border-radius: 999px;
-}
-
-/* アイコンに手作り感の傾き */
-.feature-icon {
-    transform: rotate(-3deg);
-    border-radius: 10px;
-    box-shadow: 3px 4px 0 rgba(200, 70, 66, 0.14);
-}
-.lesson-icon {
-    transform: rotate(-2.5deg);
-    border-radius: 10px;
-}
-.contact-icon {
-    transform: rotate(-2deg);
-    border-radius: 10px;
-}
-
-/* レッスンカード — 温かい紙の質感 */
-.lesson-card {
-    background: linear-gradient(160deg, #fefaf0 0%, #fdf5e2 100%);
-    border-color: #e8d8b8;
-}
-
-/* フィーチャーアイテムの背景を少し温かく */
-.feature-item {
-    background: rgba(255, 246, 224, 0.7);
-    border: 1px solid var(--color-border);
-}
-
-/* 証言セクション — 少し温かみのある深い青に */
-.testimonials {
-    background: linear-gradient(180deg, rgba(16, 38, 72, 0.97), rgba(20, 46, 85, 0.97));
-}
-
-/* フォーム入力フィールドの角を丸く */
-.form-input,
-.form-select,
-.form-textarea {
-    border-radius: 10px;
-    background: #fefaee;
-}
-
-/* よくある質問アイテム — 温かい背景 */
-.faq-item {
-    background: linear-gradient(160deg, #fefaf2 0%, #fdf5e4 100%);
-}
-
-/* コンタクトカード — より温かく */
-.contact-card {
-    background: linear-gradient(160deg, #fefaf2 0%, #fdf5e4 100%);
-}
-
-/* ヘッダーの背景を少し温かいクリーム色に */
-.header {
-    background-color: rgba(254, 248, 236, 0.97);
-}
-
-/* ページ全体の背景テクスチャを温かく */
-body {
-    background:
-        linear-gradient(90deg, rgba(220, 196, 158, 0.12) 1px, transparent 1px) 0 0 / 32px 32px,
-        var(--color-background);
-}
-
-/* モバイルナビパネルを温かい色に */
-.mobile-nav-panel {
-    background: var(--color-paper);
-}
-
-/* ===== カレンダー イベント カテゴリ色 ===== */
-/* border-color / box-shadow / date-number を各カテゴリで上書き */
-.has-event.cat-eiga {
-    border-color: rgba(190, 62, 62, 0.35);
-    border-left: 3px solid #be3e3e;
-    box-shadow: inset 0 3px 0 #be3e3e, 0 8px 20px rgba(26, 58, 82, 0.06);
-}
-.has-event.cat-eiga .date-number { color: #be3e3e; background-color: rgba(190, 62, 62, 0.1); }
+.has-event.cat-kaiwa .date-number { color: #c97c2a; }
 
 .has-event.cat-culture {
-    border-color: rgba(58, 78, 136, 0.35);
-    border-left: 3px solid #3a4e88;
-    box-shadow: inset 0 3px 0 #3a4e88, 0 8px 20px rgba(26, 58, 82, 0.06);
+    background-color: rgba(26, 58, 82, 0.08);
+    border-color: rgba(26, 58, 82, 0.4);
+    border-left: 4px solid #1a3a52;
+    box-shadow: none;
 }
-.has-event.cat-culture .date-number { color: #3a4e88; background-color: rgba(58, 78, 136, 0.1); }
+.has-event.cat-culture .date-number { color: #1a3a52; }
 
-.has-event.cat-kaiwa {
-    border-color: rgba(201, 124, 42, 0.35);
-    border-left: 3px solid #c97c2a;
-    box-shadow: inset 0 3px 0 #c97c2a, 0 8px 20px rgba(26, 58, 82, 0.06);
+.has-event.cat-eiga {
+    background-color: rgba(180, 30, 30, 0.08);
+    border-color: rgba(180, 30, 30, 0.4);
+    border-left: 4px solid #b41e1e;
+    box-shadow: none;
 }
-.has-event.cat-kaiwa .date-number { color: #c97c2a; background-color: rgba(201, 124, 42, 0.1); }
+.has-event.cat-eiga .date-number { color: #b41e1e; }
 
 .has-event.cat-salon {
-    border-color: rgba(212, 160, 32, 0.35);
-    border-left: 3px solid #d4a020;
-    box-shadow: inset 0 3px 0 #d4a020, 0 8px 20px rgba(26, 58, 82, 0.06);
+    background-color: rgba(80, 130, 70, 0.1);
+    border-color: rgba(80, 130, 70, 0.45);
+    border-left: 4px solid #508246;
+    box-shadow: none;
 }
-.has-event.cat-salon .date-number { color: #d4a020; background-color: rgba(212, 160, 32, 0.1); }
-
-.has-event.cat-news {
-    border-color: rgba(90, 122, 58, 0.35);
-    border-left: 3px solid #5a7a3a;
-    box-shadow: inset 0 3px 0 #5a7a3a, 0 8px 20px rgba(26, 58, 82, 0.06);
-}
-.has-event.cat-news .date-number { color: #5a7a3a; background-color: rgba(90, 122, 58, 0.1); }
+.has-event.cat-salon .date-number { color: #508246; }
 
 .has-event.cat-lecture {
-    border-color: rgba(58, 122, 136, 0.35);
-    border-left: 3px solid #3a7a88;
-    box-shadow: inset 0 3px 0 #3a7a88, 0 8px 20px rgba(26, 58, 82, 0.06);
+    background-color: rgba(100, 70, 150, 0.08);
+    border-color: rgba(100, 70, 150, 0.4);
+    border-left: 4px solid #644696;
+    box-shadow: none;
 }
-.has-event.cat-lecture .date-number { color: #3a7a88; background-color: rgba(58, 122, 136, 0.1); }
+.has-event.cat-lecture .date-number { color: #644696; }
+
+.has-event.cat-news {
+    background-color: rgba(120, 120, 120, 0.08);
+    border-color: rgba(120, 120, 120, 0.4);
+    border-left: 4px solid #787878;
+    box-shadow: none;
+}
+.has-event.cat-news .date-number { color: #787878; }
 
 .has-event.cat-multi {
-    border-color: rgba(122, 90, 136, 0.35);
-    border-left: 3px solid #7a5a88;
-    box-shadow: inset 0 3px 0 #7a5a88, 0 8px 20px rgba(26, 58, 82, 0.06);
-}
-.has-event.cat-multi .date-number { color: #7a5a88; background-color: rgba(122, 90, 136, 0.1); }
-
-/* カレンダー内クラス名リンク */
-.cal-event-link {
-    color: inherit;
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 1px dotted currentColor;
-    transition: opacity 0.2s;
-    cursor: pointer;
-}
-.cal-event-link:hover { opacity: 0.68; }
-
-/* カレンダー凡例の連絡先リンク */
-.legend-contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3em;
-    padding: 0.3em 0.9em;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    font-size: 0.85rem;
-    color: var(--color-primary);
-    text-decoration: none;
-    background: var(--color-background-alt);
-    transition: var(--transition);
-}
-.legend-contact-link:hover {
-    border-color: var(--color-accent);
-    background: var(--color-white);
-    color: var(--color-accent-dark);
+    background-color: rgba(201, 169, 97, 0.12);
+    border-color: rgba(201, 169, 97, 0.6);
+    border-left: 4px solid var(--color-accent);
+    box-shadow: none;
 }
 
-/* カレンダー凡例カテゴリドット */
-.schedule-legend .cat-dot {
+/* カテゴリドット（凡例用） */
+.cat-dot {
     display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    margin-right: 0.25em;
     vertical-align: middle;
+}
+.cat-dot.cat-kaiwa { background-color: #c97c2a; }
+.cat-dot.cat-culture { background-color: #1a3a52; }
+.cat-dot.cat-eiga { background-color: #b41e1e; }
+.cat-dot.cat-salon { background-color: #508246; }
+.cat-dot.cat-lecture { background-color: #644696; }
+.cat-dot.cat-news { background-color: #787878; }
+
+/* cal-event-link (invisible overlay) */
+.cal-event-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+/* cal-wd (曜日ラベル、モバイルのみ表示) */
+.cal-wd {
+    display: none;
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-left: 0.3rem;
+    vertical-align: middle;
+}
+
+/* 凡例エリア */
+.schedule-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+.schedule-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.legend-contact-links {
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+.legend-contact-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* モバイルで曜日表示 */
+@media (max-width: 768px) {
+    .cal-wd {
+        display: inline;
+    }
 }
 
 /* ===== 予約モーダル ===== */
@@ -3152,26 +2829,25 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(20, 30, 50, 0.65);
-    z-index: 3000;
+    background: rgba(0,0,0,0.55);
+    z-index: 9000;
     align-items: center;
     justify-content: center;
     padding: 1rem;
 }
-.booking-overlay.active { display: flex; }
-
+.booking-overlay.active {
+    display: flex;
+}
 .booking-modal {
-    background: var(--color-paper);
+    background: var(--color-white);
     border-radius: 16px;
-    max-width: 580px;
+    padding: 2rem 2.5rem;
+    max-width: 600px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    padding: 2rem;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.32);
 }
-
 .booking-modal-close {
     position: absolute;
     top: 1rem;
@@ -3179,37 +2855,28 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0.25rem;
     color: var(--color-text-light);
-    padding: 0.4rem;
-    border-radius: 50%;
-    transition: var(--transition);
-    line-height: 0;
 }
-.booking-modal-close:hover { background: var(--color-background-alt); color: var(--color-text); }
-.booking-modal-close svg { width: 22px; height: 22px; }
-
+.booking-modal-close svg { width: 24px; height: 24px; display: block; }
 .booking-modal-title {
     font-family: var(--font-serif);
     font-size: 1.3rem;
     color: var(--color-primary);
-    margin-bottom: 0.25rem;
-    padding-right: 2rem;
+    margin-bottom: 0.5rem;
 }
 .booking-modal-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--color-text-light);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
-
 .booking-date-section-label {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.75rem;
 }
-.booking-date-section-label .required { color: #be3e3e; font-size: 0.78rem; margin-left: 0.3rem; }
-
 .booking-date-select {
     display: flex;
     flex-wrap: wrap;
@@ -3217,91 +2884,70 @@ body {
     margin-bottom: 1.5rem;
 }
 .booking-date-btn {
-    padding: 0.45rem 1.05rem;
+    padding: 0.5rem 1rem;
     border: 1.5px solid var(--color-border);
     border-radius: 999px;
-    background: var(--color-background-alt);
-    color: var(--color-text);
-    font-size: 0.88rem;
+    background: none;
     cursor: pointer;
-    transition: var(--transition);
-    font-family: var(--font-sans);
-}
-.booking-date-btn:hover { border-color: var(--color-accent-light); background: var(--color-white); }
-.booking-date-btn.selected {
-    border-color: var(--color-accent);
-    background: var(--color-accent);
-    color: #fff;
-}
-
-.booking-form-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.88rem;
     color: var(--color-text);
-    margin-bottom: 0.35rem;
+    transition: var(--transition);
 }
-.booking-form-label .required { color: #be3e3e; font-size: 0.78rem; margin-left: 0.3rem; }
-.booking-form-label .optional { color: var(--color-text-light); font-size: 0.78rem; margin-left: 0.3rem; }
-.booking-form-group { margin-bottom: 1rem; }
+.booking-date-btn:hover { border-color: var(--color-accent); }
+.booking-date-btn.selected {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
 .booking-form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 0;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
-@media (max-width: 480px) { .booking-form-row { grid-template-columns: 1fr; } }
-
+.booking-form-group {
+    margin-bottom: 1rem;
+}
+.booking-form-label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+}
 .booking-submit-btn {
     width: 100%;
     padding: 0.9rem;
-    background: var(--color-accent);
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     border: none;
     border-radius: 999px;
     font-size: 1rem;
-    font-family: var(--font-sans);
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
     margin-top: 0.5rem;
+    transition: var(--transition);
 }
-.booking-submit-btn:hover { opacity: 0.88; }
-.booking-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
+.booking-submit-btn:hover { background-color: var(--color-primary-dark); }
 .booking-success {
-    text-align: center;
-    padding: 2.5rem 1rem;
     display: none;
+    text-align: center;
+    padding: 2rem;
 }
 .booking-success.active { display: block; }
-.booking-success svg { width: 52px; height: 52px; color: #3a7a3a; margin-bottom: 1rem; }
-.booking-success h3 { font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.2rem; }
-.booking-success p { color: var(--color-text-light); font-size: 0.9rem; }
-
-/* 予約ボタン（レッスンページ・メインページ共通） */
-.booking-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: var(--color-accent);
-    color: #fff;
-    border: none;
-    border-radius: 999px;
-    font-size: 1rem;
-    font-family: var(--font-sans);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
+.booking-success svg { width: 48px; height: 48px; color: #27ae60; margin: 0 auto 1rem; display: block; }
+.booking-success h3 { color: var(--color-primary); margin-bottom: 0.5rem; }
+.curated-actions .hero-button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    backdrop-filter: none;
 }
-.booking-trigger:hover { opacity: 0.88; transform: translateY(-2px); }
-
-/* スクロールバーを温かい色に */
-::-webkit-scrollbar-thumb {
-    background: #d4b896;
+.curated-actions .hero-button.secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
-::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
+@media (max-width: 600px) {
+    .booking-form-row { grid-template-columns: 1fr; }
+    .booking-modal { padding: 1.5rem 1.25rem; }
 }
