@@ -1,1 +1,75 @@
-{"name": "demo-dfr-tokyo-douce-france-c86b05-w52qu5ri1-a0318b"}
+{
+  "name": "demo-dfr-tokyo-douce-france-c86b05-w52qu5ri1-a0318b",
+  "redirects": [
+    {
+      "source": "/self-education",
+      "destination": "https://dfr.tokyo/self-education/",
+      "permanent": true
+    },
+    {
+      "source": "/self-education/:path*",
+      "destination": "https://dfr.tokyo/self-education/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://dfr.tokyo/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://dfr.tokyo/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "https://dfr.tokyo/category/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2016/:path*",
+      "destination": "https://dfr.tokyo/2016/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2017/:path*",
+      "destination": "https://dfr.tokyo/2017/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2018/:path*",
+      "destination": "https://dfr.tokyo/2018/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2019/:path*",
+      "destination": "https://dfr.tokyo/2019/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2020/:path*",
+      "destination": "https://dfr.tokyo/2020/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2022/:path*",
+      "destination": "https://dfr.tokyo/2022/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2023/:path*",
+      "destination": "https://dfr.tokyo/2023/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2024/:path*",
+      "destination": "https://dfr.tokyo/2024/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/2025/:path*",
+      "destination": "https://dfr.tokyo/2025/:path*",
+      "permanent": true
+    }
+  ]
+}

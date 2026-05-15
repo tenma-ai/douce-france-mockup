@@ -2951,3 +2951,83 @@ section {
     .booking-form-row { grid-template-columns: 1fr; }
     .booking-modal { padding: 1.5rem 1.25rem; }
 }
+
+/* ===== dfr.tokyo 案内バナー ===== */
+.dfr-banner {
+    background-color: var(--color-primary);
+    padding: 3rem 2rem;
+}
+.dfr-banner-inner {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+.dfr-banner-text {
+    flex: 1;
+    min-width: 240px;
+}
+.dfr-banner-label {
+    font-family: var(--font-french);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+}
+.dfr-banner-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+.dfr-banner-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+}
+.dfr-banner-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+.dfr-banner-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+.dfr-banner-btn:hover {
+    background-color: var(--color-accent-light);
+}
+.dfr-banner-btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 1.5px solid rgba(255,255,255,0.4);
+}
+.dfr-banner-btn-secondary:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.7);
+}
+@media (max-width: 768px) {
+    .dfr-banner-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .dfr-banner-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
